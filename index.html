@@ -69,29 +69,9 @@
     </footer>
 
     <script>
-        window.addEventListener('scroll', reveal);
+      <script src="script.js"></script>
 
-        function reveal(){
-            var reveals = document.querySelectorAll('.reveal');
-
-            for(var i = 0; i < reveals.length; i++){
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150; // Trigger distance from bottom
-
-                if(elementTop < windowHeight - elementVisible){
-                    reveals[i].classList.add('active');
-                }
-                // Optional: Remove 'else' if you want animation to happen only once
-                else {
-                    reveals[i].classList.remove('active');
-                }
-            }
-        }
-        
-        // Trigger once on load in case elements are already in view
-        reveal();
-    </script>
+</script>
 
 </body>
 </html>
