@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Materials - Think&Learn</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Think&Learn</div>
+        
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" onclick="toggleMenu()">Home</a> 
+            <a href="#" class="active" onclick="toggleMenu()">Study Material</a>
+            <a href="#contact" onclick="toggleMenu()">Contact</a>
+            <button class="btn-primary">Book a Free Class</button>
+        </div>
+    </nav>
+
+    <main class="study-container">
+        
+        <aside class="sidebar reveal">
+            <h3>📚 Filter by Grade</h3>
+            <ul class="filter-list">
+                <li><a href="#" class="active-filter">All Classes</a></li>
+                <li><a href="#">Class 12</a></li>
+                <li><a href="#">Class 10</a></li>
+                <li><a href="#">JEE/NEET Prep</a></li>
+                <li><a href="#">Primary Grades</a></li>
+            </ul>
+
+            <h3>🧠 Popular Subjects</h3>
+            <ul class="filter-list">
+                <li><a href="#">Mathematics</a></li>
+                <li><a href="#">Physics</a></li>
+                <li><a href="#">Chemistry</a></li>
+                <li><a href="#">Biology</a></li>
+            </ul>
+        </aside>
+
+        <section class="course-listing">
+            <h2 class="reveal">Explore All Materials</h2>
+            
+            <div class="course-grid">
+                
+                <div class="card course-card reveal">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1000/1000966.png" alt="Math icon" class="card-icon">
+                    <h4>Class 10 - Algebra</h4>
+                    <p>Deep dive into Quadratic Equations, Polynomials, and Number Theory.</p>
+                    <button class="btn-primary">Start Learning</button>
+                </div>
+                
+                <div class="card course-card reveal">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2857/2857217.png" alt="Science icon" class="card-icon">
+                    <h4>Class 9 - Physics & Chem</h4>
+                    <p>Covers Motion, Force, Laws of Thermodynamics, and Chemical Reactions.</p>
+                    <button class="btn-primary">Start Learning</button>
+                </div>
+
+                <div class="card course-card reveal">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1042/1042339.png" alt="Biology icon" class="card-icon">
+                    <h4>Grade 6-8 Science Basics</h4>
+                    <p>Fundamental concepts of Cell Biology, Ecosystems, and Human Body.</p>
+                    <button class="btn-primary">Start Learning</button>
+                </div>
+
+                <div class="card course-card reveal">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3233/3233816.png" alt="Language icon" class="card-icon">
+                    <h4>English Grammar & Essay</h4>
+                    <p>Master advanced grammar rules, essay writing, and comprehension skills.</p>
+                    <button class="btn-primary">Start Learning</button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact">
+        <p class="reveal">© 2024 ByjuClone. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle (REQUIRED) ---
+        function toggleMenu() {
+            const menu = document.getElementById("navLinks");
+            menu.classList.toggle("active");
+        }
+
+        // --- Scroll Reveal Animation (REQUIRED) ---
+        window.addEventListener('scroll', reveal);
+
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                } else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+        reveal();
+    </script>
+
+</body>
+</html>
