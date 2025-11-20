@@ -87,31 +87,8 @@
     </footer>
 
     <script>
-        // --- Mobile Menu Toggle (REQUIRED) ---
-        function toggleMenu() {
-            const menu = document.getElementById("navLinks");
-            menu.classList.toggle("active");
-        }
-
-        // --- Scroll Reveal Animation (REQUIRED) ---
-        window.addEventListener('scroll', reveal);
-
-        function reveal() {
-            var reveals = document.querySelectorAll('.reveal');
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add('active');
-                } else {
-                    reveals[i].classList.remove('active');
-                }
-            }
-        }
-        reveal();
-    </script>
+       <script src="script.js"></script>
+</script>
 
 </body>
 </html>
