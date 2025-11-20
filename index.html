@@ -3,16 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website Title</title>
-    
+    <title>Byju's Clone</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Hello, World!</h1>
-    <p>This is my HTML base code.</p>
+<nav class="navbar">
+    <div class="logo">ByjuClone</div>
+    
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="nav-links" id="navLinks">
+        <a href="#hero">Home</a>
+        <a href="#features">Study Material</a>
+        <a href="#contact">Contact</a>
+        <button class="btn-primary">Book a Free Class</button>
+    </div>
+</nav>
+    
+    <header id="hero" class="hero">
+        <div class="hero-content reveal"> 
+            <h1>Make Learning <br> <span class="highlight">Wonderful</span></h1>
+            <p>Comprehensive learning programs for all classes and competitive exams.</p>
+            <div class="hero-buttons">
+                <button class="btn-white">Explore Courses</button>
+                <button class="btn-outline">Watch Video</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features-section">
+        <h2 class="reveal">Why choose us?</h2>
+        
+        <div class="card-container">
+            <div class="card reveal">
+                <h3>Personalized Learning</h3>
+                <p>Students learn at their own pace with adaptive technology and expert teachers.</p>
+            </div>
+
+            <div class="card reveal">
+                <h3>Engaging Videos</h3>
+                <p>Rich visual animations that make complex concepts simple and fun to understand.</p>
+            </div>
+
+            <div class="card reveal">
+                <h3>Unlimited Practice</h3>
+                <p>Adaptive quizzes and mock tests to ensure complete understanding of every topic.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p class="reveal">© 2024 ByjuClone. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', reveal);
+
+        function reveal(){
+            var reveals = document.querySelectorAll('.reveal');
+
+            for(var i = 0; i < reveals.length; i++){
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150; // Trigger distance from bottom
+
+                if(elementTop < windowHeight - elementVisible){
+                    reveals[i].classList.add('active');
+                }
+                // Optional: Remove 'else' if you want animation to happen only once
+                else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+        
+        // Trigger once on load in case elements are already in view
+        reveal();
+    </script>
+
 </body>
 </html>
