@@ -226,78 +226,78 @@ footer {
 }
 
 /* =========================================
-   9. MOBILE RESPONSIVENESS (MEDIA QUERIES)
+   9. MOBILE RESPONSIVENESS (WITH HAMBURGER)
    ========================================= */
+   
+/* First, style the hamburger icon (hidden on desktop) */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    background-color: var(--brand-purple);
+    height: 3px;
+    width: 25px;
+    margin: 3px;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+/* Now, the Mobile Rules */
 @media (max-width: 768px) {
     
-    /* 1. Navbar: Stack elements vertically */
     .navbar {
-        flex-direction: column;
-        padding: 15px;
+        padding: 15px 5%;
+        flex-wrap: wrap; /* Allows items to wrap to next line */
     }
 
+    /* Show the Hamburger Icon */
+    .menu-toggle {
+        display: flex; 
+    }
+
+    /* Hide the links by default */
     .nav-links {
-        display: flex;
+        display: none; /* HIDDEN */
         flex-direction: column;
         width: 100%;
         text-align: center;
-        margin: 20px 0;
-        gap: 15px; /* Space between vertical links */
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
     }
 
-    .btn-primary {
-        width: 100%; /* Make the 'Book Class' button full width */
-        padding: 12px;
+    /* This class is added by JS to show the menu */
+    .nav-links.active {
+        display: flex; /* SHOWS MENU */
+        animation: fadeIn 0.5s;
     }
 
-    /* 2. Hero Section: Center text and shrink fonts */
+    /* Stack the Hero sections and Cards (Same as before) */
     .hero {
-        padding: 60px 5%;
-        text-align: center; /* Center alignment looks better on mobile */
-        min-height: auto;   /* Allow height to adjust to content */
-    }
-
-    .hero-content {
-        width: 100%;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem; /* Shrink the big headline */
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    /* 3. Hero Buttons: Stack them vertically */
-    .hero-buttons {
-        display: flex;
         flex-direction: column;
-        gap: 15px;
+        text-align: center;
+        padding-top: 120px; /* clear the navbar */
     }
 
-    .btn-white, .btn-outline {
-        width: 100%; /* Full width buttons are easier to tap */
-        margin-right: 0;
+    .hero-buttons {
+        justify-content: center;
     }
 
-    /* 4. Cards: Make them full width */
     .card-container {
         flex-direction: column;
         align-items: center;
     }
-
+    
     .card {
-        width: 100%; /* Card takes full available width */
-        margin-bottom: 20px;
+        width: 100%;
     }
-    
-    /* 5. Adjust Features Section Padding */
-    .features-section {
-        padding: 40px 5%;
-    }
-    
-    .features-section h2 {
-        font-size: 2rem;
-    }
+}
+
+/* Simple Fade Animation for the menu */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
