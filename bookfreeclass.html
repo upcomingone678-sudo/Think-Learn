@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Free Class - Think and Learn</title>
+    
+    <style>
+        /* --- General Styles --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9f2ff; /* Light blue background for educational theme */
+            color: #333;
+        }
+        header {
+            background-color: #004d99; /* Darker blue header */
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- Form Styles --- */
+        .class-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #004d99;
+            font-size: 1.1em;
+        }
+        .class-form input[type="text"], 
+        .class-form input[type="email"],
+        .class-form input[type="tel"],
+        .class-form input[type="date"],
+        .class-form select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+            font-size: 1em;
+        }
+        
+        /* Layout for Date and Time */
+        .date-time-group {
+            display: flex;
+            gap: 20px;
+        }
+        .date-time-group > div {
+            flex: 1;
+        }
+
+        /* Submit Button */
+        .class-form button {
+            display: block;
+            width: 100%;
+            background-color: #28a745; /* Green for action/success */
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+        .class-form button:hover {
+            background-color: #1e8433;
+        }
+        
+        /* Information Box */
+        .info-box {
+            background-color: #fff3cd; /* Light warning color */
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin-top: 25px;
+            border-radius: 4px;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Book Your FREE Trial Class Today!</h1>
+        <p>Experience the Think and Learn difference with zero commitment.</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="class-form">
+            <h2>Select Your Subject and Time</h2>
+            <form action="#" method="POST"> 
+                
+                <label for="subject">1. Choose a Subject Area</label>
+                <select id="subject" name="subject" required>
+                    <option value="" disabled selected>-- Select a Subject --</option>
+                    <option value="math">Mathematics</option>
+                    <option value="science">Science (Physics, Chem, Bio)</option>
+                    <option value="coding">Coding/Computer Science</option>
+                    <option value="english">English Language Arts</option>
+                    <option value="history">History/Social Studies</option>
+                </select>
+
+                <div class="date-time-group">
+                    <div>
+                        <label for="date">2. Preferred Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div>
+                        <label for="time">Preferred Time</label>
+                        <select id="time" name="time" required>
+                            <option value="" disabled selected>-- Select Time --</option>
+                            <option value="10am">10:00 AM</option>
+                            <option value="1pm">1:00 PM</option>
+                            <option value="4pm">4:00 PM</option>
+                            <option value="6pm">6:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="name">3. Your Full Name</label>
+                <input type="text" id="name" name="name" placeholder="E.g., Alex Johnson" required>
+                
+                <label for="email">4. Your Email Address</label>
+                <input type="email" id="email" name="email" placeholder="E.g., alex@example.com" required>
+                
+                <label for="phone">5. Phone Number (Optional)</label>
+                <input type="tel" id="phone" name="phone" placeholder="E.g., +1 555-123-4567">
+                
+                <button type="submit">Confirm FREE Class Booking</button>
+            </form>
+        </div>
+
+        <div class="info-box">
+            <p>💡 **Confirmation Note:** After submission, we'll contact you within 24 hours via email or phone to confirm the exact time and platform (Zoom/Meet) for your free introductory class!</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
