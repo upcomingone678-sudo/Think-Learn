@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Think and Learn</title>
+    <style>
+        /* Basic inline styles for readability and structure (best practice is to use an external CSS file) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        .contact-form, .contact-info {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .contact-form input[type="text"], 
+        .contact-form input[type="email"], 
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .contact-form button {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .contact-form button:hover {
+            background-color: #218838;
+        }
+        .contact-info p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Connect with Think and Learn!</h1>
+    </header>
+
+    <div class="container">
+        
+        <div class="contact-form">
+            <h2>Send Us a Message 📧</h2>
+            <form action="#" method="POST"> 
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Submit Inquiry</button>
+            </form>
+        </div>
+        
+        <hr>
+
+        <div class="contact-info">
+            <h2>Our Contact Details 📞</h2>
+            <p>We're here to help you on your educational journey. Reach out to us through any of the following methods:</p>
+            
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:support@thinkandlearn.edu">support@thinkandlearn.edu</a></li>
+                <li><strong>Phone:</strong> <a href="tel:+1234567890">(123) 456-7890</a></li>
+                <li><strong>Address:</strong> 101 Knowledge Avenue, Learning City, 12345</li>
+                <li><strong>Office Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM (EST)</li>
+            </ul>
+
+            <p>You can also find us on social media!</p>
+            </div>
+
+    </div>
+
+</body>
+</html>
