@@ -6,7 +6,7 @@
     <title>Contact Us - Think and Learn</title>
     <link rel="stylesheet" href="style.css">
 
-        </head>
+</head>
     <style>
         /* Basic inline styles for readability and structure (best practice is to use an external CSS file) */
         body {
@@ -115,6 +115,35 @@
             </div>
 
     </div>
+    <script>
+        
+        // --- Mobile Menu Toggle ---
+function toggleMenu() {
+    const menu = document.getElementById("navLinks");
+    menu.classList.toggle("active");
+}
+
+// --- Scroll Reveal Animation ---
+window.addEventListener('scroll', reveal);
+
+function reveal() {
+    var reveals = document.querySelectorAll('.reveal');
+
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add('active');
+        } else {
+            reveals[i].classList.remove('active');
+        }
+    }
+}
+reveal();
+
+</script>
 
 </body>
 </html>
