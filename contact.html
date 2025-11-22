@@ -3,85 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Think and Learn</title>
-    <link rel="stylesheet" href="style.css">
-
-</head>
+    <title>Contact Us - Think&Learn</title>
+    <link rel="stylesheet" href="style.css"> 
+    
     <style>
-        /* Basic inline styles for readability and structure (best practice is to use an external CSS file) */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 20px 0;
+        /* --- CONTACT PAGE SPECIFIC STYLES ---
+           These styles are placed here for the contact page to maintain the look
+           while adhering to the existing style.css variables.
+        */
+
+        /* Main Section Styling - mimicking .features-section structure */
+        .contact-section {
+            padding: 80px 5%;
             text-align: center;
+            background: #f5f5f5; /* Use body background */
+            min-height: 70vh; /* Ensure content fills the screen */
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px 0;
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--text-dark);
         }
-        .contact-form, .contact-info {
+
+        /* Container for Form/Info - mimicking .card styling */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        /* Styling for both the form and info boxes */
+        .contact-box {
             background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 450px;
+            text-align: left;
+            border-top: 5px solid var(--brand-purple); /* Border element */
         }
+
+        /* Form Fields */
         .contact-form label {
             display: block;
             margin-bottom: 5px;
-            font-weight: bold;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
         }
+
         .contact-form input[type="text"], 
         .contact-form input[type="email"], 
         .contact-form textarea {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
+            padding: 12px;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 8px; /* Slightly rounded inputs */
             box-sizing: border-box;
+            font-size: 1rem;
         }
+
         .contact-form textarea {
             height: 150px;
             resize: vertical;
         }
-        .contact-form button {
-            background-color: #28a745;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
+
+        /* Re-using the btn-primary style for the form submit button */
+        .contact-form button.btn-primary {
+            width: 100%;
+            border-radius: 8px; /* Match input styling */
         }
-        .contact-form button:hover {
-            background-color: #218838;
+
+        /* Contact Info List */
+        .contact-info h3 {
+            color: var(--brand-purple);
+            margin-bottom: 20px;
         }
-        .contact-info p {
-            line-height: 1.6;
+
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1.05rem;
+        }
+
+        .contact-info li strong {
+            margin-right: 10px;
+            color: var(--accent-orange);
+            font-weight: 700;
+        }
+
+        .contact-info a {
+            color: var(--brand-purple);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: var(--accent-orange);
+            text-decoration: underline;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .contact-box {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Connect with Think and Learn!</h1>
-    </header>
+<nav class="navbar">
+    <div class="logo">Think&Learn</div>
+    
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-    <div class="container">
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a> <a href="study.html">Study Material</a>
+        <a href="#contact-form">Contact</a>
+        <a href="bookfreeclass.html" class="btn-primary">Book a Free Class</a>
+    </div>
+</nav>
+
+<section id="contact-form" class="contact-section">
+    <h2 class="reveal">Get In Touch With Us 🤝</h2>
+    
+    <div class="contact-container">
         
-        <div class="contact-form">
-            <h2>Send Us a Message 📧</h2>
-            <form action="#" method="POST"> 
+        <div class="contact-box reveal">
+            <h3>Send Us a Quick Message</h3>
+            <form action="#" method="POST" class="contact-form"> 
+                
                 <label for="name">Your Name</label>
                 <input type="text" id="name" name="name" required>
                 
@@ -94,54 +162,64 @@
                 <label for="message">Your Message</label>
                 <textarea id="message" name="message" required></textarea>
                 
-                <button type="submit">Submit Inquiry</button>
+                <button type="submit" class="btn-primary">Send Message</button>
             </form>
         </div>
         
-        <hr>
-
-        <div class="contact-info">
-            <h2>Our Contact Details 📞</h2>
-            <p>We're here to help you on your educational journey. Reach out to us through any of the following methods:</p>
+        <div class="contact-box contact-info reveal">
+            <h3>Our Contact Details</h3>
+            <p>We are available to answer your questions Monday to Friday, 9:00 AM - 5:00 PM IST.</p>
             
             <ul>
                 <li><strong>Email:</strong> <a href="mailto:support@thinkandlearn.edu">support@thinkandlearn.edu</a></li>
-                <li><strong>Phone:</strong> <a href="tel:+1234567890">(123) 456-7890</a></li>
-                <li><strong>Address:</strong> 101 Knowledge Avenue, Learning City, 12345</li>
-                <li><strong>Office Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM (EST)</li>
+                <li><strong>Phone:</strong> <a href="tel:+911234567890">+91-123-456-7890</a></li>
+                <li><strong>Location:</strong> 101 Knowledge Tower, Learning Hub, IN 560001</li>
             </ul>
+            
+            <hr style="border-color: #eee; margin: 20px 0;">
 
-            <p>You can also find us on social media!</p>
+            <h3>Follow Us</h3>
+            <p>Stay connected for the latest updates and educational tips.</p>
+            <div class="social-links">
+                <a href="#" style="color: var(--brand-purple); font-size: 24px; margin-right: 15px;">[F]</a>
+                <a href="#" style="color: var(--brand-purple); font-size: 24px; margin-right: 15px;">[T]</a>
+                <a href="#" style="color: var(--brand-purple); font-size: 24px;">[I]</a>
             </div>
+        </div>
 
     </div>
-    <script>
-        
-        // --- Mobile Menu Toggle ---
-function toggleMenu() {
-    const menu = document.getElementById("navLinks");
-    menu.classList.toggle("active");
-}
+</section>
+ 
+<footer>
+    <p class="reveal">© 2024 Think&Learn. All rights reserved.</p>
+</footer>
 
-// --- Scroll Reveal Animation ---
-window.addEventListener('scroll', reveal);
+<script>
+    // --- Mobile Menu Toggle ---
+    function toggleMenu() {
+        const menu = document.getElementById("navLinks");
+        menu.classList.toggle("active");
+    }
 
-function reveal() {
-    var reveals = document.querySelectorAll('.reveal');
+    // --- Scroll Reveal Animation ---
+    window.addEventListener('scroll', reveal);
 
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 150;
+    function reveal() {
+        var reveals = document.querySelectorAll('.reveal');
 
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add('active');
-        } else {
-            reveals[i].classList.remove('active');
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add('active');
+            } else {
+                reveals[i].classList.remove('active');
+            }
         }
     }
-}
-reveal();
+    reveal();
 
 </script>
 
